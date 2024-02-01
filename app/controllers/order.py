@@ -21,6 +21,7 @@ async def create_order(order_create: OrderCreate):
     # Calculate total amount for each order item
 
     product = products_collection.find_one({"_id": ObjectId(order_create.items.productId)})
+    #Validation for if we have available quantity for that order
     if order_create.items.boughtQuantity > product["quantity"]:
             raise HTTPException(status_code=400, detail=f"Insufficient quantity available for product {product['name']}")
         
@@ -28,7 +29,6 @@ async def create_order(order_create: OrderCreate):
         raise HTTPException(status_code=404, detail=f"Product with ID {order_create.items.productId} not found")
     order_create.items.totalAmount = order_create.items.boughtQuantity * product["price"]
 
-    # Calculate total amount for the entire order
     
 
     # Create the order document
@@ -38,6 +38,7 @@ async def create_order(order_create: OrderCreate):
         "UserAddress": dict(order_create.userAddress),
         "total_order_amount" : order_create.items.totalAmount,
     }
+    #Adding updates to the quatity reduction due to the current order
     product_refresh = {
          "name" : product['name'],
          "price": product['price'],
