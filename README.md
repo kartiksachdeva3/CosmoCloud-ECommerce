@@ -7,7 +7,8 @@ This is a CosmoCloud FastAPI Assignment for an e-commerce API with CRUD operatio
 CRUD operations for products
 Order creation with validation of available product quantity
 Pagination and filtering for products
-...
+
+```
 Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -66,6 +67,7 @@ bash
 Copy code
 uvicorn main:app --reload
 The application will be accessible at http://127.0.0.1:8000.
+```
 
 ### Usage
 
