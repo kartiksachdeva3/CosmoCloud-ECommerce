@@ -1,7 +1,7 @@
-###CosmoCloud FastAPI E-commerce API
+###CosmoCloud FastAPI E-commerce API###
 This is a CosmoCloud FastAPI Assignment for an e-commerce API with CRUD operations for products and orders. The project uses MongoDB as the database.
 
-###Features
+###Features###
 CRUD operations for products
 Order creation with validation of available product quantity
 Pagination and filtering for products
@@ -65,6 +65,6 @@ Copy code
 uvicorn main:app --reload
 The application will be accessible at http://127.0.0.1:8000.
 
-###Usage
+###Usage###
 Visit the FastAPI documentation at http://127.0.0.1:8000/docs to explore and test the API endpoints.
 Use tools like httpie or curl to make HTTP requests to the API.
