@@ -72,7 +72,7 @@ The application will be accessible at http://127.0.0.1:8000.
 ### API Documentations
 
     POST /orders/
-    ```
+
     SCHEMA: {
         "items": {
         "productId": "string",
@@ -86,32 +86,33 @@ The application will be accessible at http://127.0.0.1:8000.
         }
     }
 
-````
+
+
      GET /products/?limit=10&offset=0&min_price=100&max_price=1000
      SCHEMA:
-     ![Alt text](image.png)
+
+     ![GetFilters](image.png)
+
      POST /products/
-     ```
+
      SCHEMA:
             {
                 "name": "string",
                 "price": 0,
                 "quantity": 0
             }
-     ```
+
      GET /products/{product_id}
      PUT /products/{product_id}
      DELETE /products/{product_id}
 
      MongoDB collection Snippet for Product:
-     ![Alt text](image-1.png)
+     ![Product](image-1.png)
 
      MongoDB collection Snippet for Order:
-     ![Alt text](image-2.png)
-
+     ![Orders](image-2.png)
 
 ### Usage
 
 Visit the FastAPI documentation at http://127.0.0.1:8000/docs to explore and test the API endpoints.
 Use tools like httpie or curl to make HTTP requests to the API.
-````
