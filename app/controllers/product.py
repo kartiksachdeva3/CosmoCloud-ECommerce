@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 from app.models.product  import Product, ProductCreate, ProductUpdate, PaginatedProduct
-
+from typing import List
 from pymongo import MongoClient
 from bson import ObjectId
 
@@ -10,6 +10,12 @@ router = APIRouter()
 client = MongoClient("mongodb://localhost:27017/")
 db = client["Cloud"]
 products_collection = db["products"]
+
+@router.get("/all", response_model=List[Product])
+async def get_all_product():
+    product = list(products_collection.find())
+    
+    return product
 
 @router.get("/", response_model=PaginatedProduct)
 async def get_products(

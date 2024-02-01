@@ -115,7 +115,21 @@ MongoDB collection Snippet for Order:
 
 ![Orders](image-2.png)
 
-### Usage
+### Usage and Code structure
 
 Visit the FastAPI documentation at http://127.0.0.1:8000/docs to explore and test the API endpoints.
-Use tools like httpie or curl to make HTTP requests to the API.
+
+I created the Rest API like structure, organised in MVC fashion to address and keep controller and model seprated.
+
+First we can add the product with the create api from product controller that just take basic information like what is
+the product name, price and quatity available.
+
+We can get the output for that product with the get api for all products as well as with pagination and offset
+
+There are also other CRUD based API for product in case we require them.
+
+I have created a create order controller which handles create order api.
+The API first check if the productId exist in the product collection and then do some basic checks like checking if we have available quatity to buy.
+It will update the price from brought value with the total price amount of the order.
+
+It also updates the left available quantity in the product collection.
