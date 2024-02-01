@@ -73,32 +73,33 @@ The application will be accessible at http://127.0.0.1:8000.
 
 POST /orders/
 
-SCHEMA: {
-"items": {
-"productId": "string",
-"boughtQuantity": 0,
-"totalAmount": 0
-},
-"userAddress": {
-"city": "string",
-"country": "string",
-"zipCode": "string"
-}
-}
+    SCHEMA: {
+    "items": {
+    "productId": "string",
+    "boughtQuantity": 0,
+    "totalAmount": 0
+        },
+    "userAddress": {
+    "city": "string",
+    "country": "string",
+    "zipCode": "string"
+        }
+    }
 
 GET /products/?limit=10&offset=0&min_price=100&max_price=1000
+
 SCHEMA:
 
 ![GetFilters](image.png)
 
 POST /products/
 
-SCHEMA:
-{
-"name": "string",
-"price": 0,
-"quantity": 0
-}
+    SCHEMA:
+        {
+            "name": "string",
+            "price": 0,
+            "quantity": 0
+        }
 
 GET /products/{product_id}
 
@@ -107,9 +108,11 @@ PUT /products/{product_id}
 DELETE /products/{product_id}
 
 MongoDB collection Snippet for Product:
+
 ![Product](image-1.png)
 
 MongoDB collection Snippet for Order:
+
 ![Orders](image-2.png)
 
 ### Usage
